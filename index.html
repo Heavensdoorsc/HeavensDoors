@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Heaven's Doors — Alianzas</title>
+
+<style>
+
+/* =========================
+   FUENTES
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap');
+
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(70, 170, 255, 0.16),
+      transparent 38%
+    ),
+    #020711;
+
+  color: #edf9ff;
+
+  font-family: "Montserrat", sans-serif;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.hero {
+  width: min(820px, 92%);
+
+  margin: auto;
+
+  padding-top: 55px;
+
+  text-align: center;
+}
+
+
+/* Contenedor de la imagen */
+
+.image-container {
+  width: 100%;
+
+  padding: 7px;
+
+  border: 1px solid rgba(130, 210, 255, 0.35);
+
+  background: rgba(2, 10, 25, 0.7);
+
+  box-shadow:
+    0 0 45px rgba(60, 180, 255, 0.15);
+}
+
+
+/* Imagen */
+
+.image-container img {
+  width: 100%;
+
+  display: block;
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+}
+
+
+/* Texto debajo de la imagen */
+
+.hero-text {
+  padding: 27px 10px 10px;
+}
+
+
+.hero-text h1 {
+  font-family: "Cinzel", serif;
+
+  font-size: clamp(30px, 7vw, 62px);
+
+  font-weight: 500;
+
+  letter-spacing: 5px;
+
+  color: #edf9ff;
+
+  text-shadow:
+    0 0 18px rgba(100, 210, 255, 0.55);
+}
+
+
+.hero-text p {
+  margin-top: 9px;
+
+  color: #9fc2d9;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================
+   ENCABEZADOS
+========================= */
+
+.section-title {
+  width: min(820px, 92%);
+
+  margin: 65px auto 28px;
+
+  text-align: center;
+}
+
+
+.decoration {
+  color: #78cfff;
+
+  font-size: 13px;
+
+  letter-spacing: 8px;
+
+  margin-bottom: 12px;
+}
+
+
+.section-title h2 {
+  font-family: "Cinzel", serif;
+
+  font-size: clamp(23px, 5vw, 37px);
+
+  font-weight: 500;
+
+  letter-spacing: 3px;
+}
+
+
+.section-title p {
+  margin-top: 11px;
+
+  color: #91b1c8;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   TÉRMINOS
+========================= */
+
+.terms {
+  width: min(820px, 92%);
+
+  margin: auto;
+
+  border-top: 1px solid rgba(130, 210, 255, 0.25);
+}
+
+
+.term {
+  border-bottom: 1px solid rgba(130, 210, 255, 0.25);
+
+  background: rgba(4, 17, 36, 0.45);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.term.active {
+  background: rgba(13, 49, 84, 0.48);
+
+  box-shadow:
+    inset 3px 0 #78cfff;
+}
+
+
+/* Botón */
+
+.term-button {
+  width: 100%;
+
+  border: none;
+
+  background: transparent;
+
+  color: #edf9ff;
+
+  padding: 21px 12px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  text-align: left;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+}
+
+
+.term-button:hover {
+  color: #bfeaff;
+}
+
+
+.term-name {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+.number {
+  color: #78cfff;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+
+  min-width: 25px;
+}
+
+
+.arrow {
+  color: #78cfff;
+
+  font-size: 20px;
+
+  font-style: normal;
+
+  transition: transform 0.3s ease;
+}
+
+
+.term.active .arrow {
+  transform: rotate(180deg);
+}
+
+
+/* Contenido */
+
+.term-content {
+  max-height: 0;
+
+  overflow: hidden;
+
+  transition:
+    max-height 0.45s ease;
+}
+
+
+.term-text {
+  padding:
+    0
+    35px
+    24px
+    52px;
+
+  color: #bdd5e6;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+.term-text p {
+  margin-bottom: 10px;
+}
+
+
+.term-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   ACEPTACIÓN
+========================= */
+
+.acceptance {
+  width: min(820px, 92%);
+
+  margin: 55px auto 0;
+
+  padding: 38px 22px;
+
+  text-align: center;
+
+  border:
+    1px solid rgba(130, 210, 255, 0.3);
+
+  background:
+    rgba(4, 17, 36, 0.55);
+}
+
+
+.acceptance .decoration {
+  margin-bottom: 12px;
+}
+
+
+.acceptance h2 {
+  font-family: "Cinzel", serif;
+
+  font-size: clamp(21px, 5vw, 30px);
+
+  font-weight: 500;
+
+  letter-spacing: 2px;
+}
+
+
+.acceptance-description {
+  max-width: 590px;
+
+  margin: 12px auto 22px;
+
+  color: #9fbdd1;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* Checkbox */
+
+.accept-label {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  color: #d4edfa;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+
+.accept-label input {
+  width: 17px;
+
+  height: 17px;
+
+  accent-color: #78cfff;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: 23px;
+
+  padding: 14px 24px;
+
+  background: #eaf8ff;
+
+  color: #031225;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.3px;
+
+  opacity: 0.35;
+
+  pointer-events: none;
+
+  transform: translateY(0);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.whatsapp.ready {
+  opacity: 1;
+
+  pointer-events: auto;
+}
+
+
+.whatsapp.ready:hover {
+  background: #a7e2ff;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 28px rgba(100, 210, 255, 0.3);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+
+  padding: 35px 20px 50px;
+
+  color: #637f94;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero-text h1 {
+    letter-spacing: 3px;
+  }
+
+  .hero-text p {
+    letter-spacing: 2.5px;
+  }
+
+  .term-button {
+    padding: 19px 8px;
+
+    font-size: 12.5px;
+  }
+
+  .term-text {
+    padding-left: 40px;
+
+    padding-right: 18px;
+  }
+
+  .acceptance {
+    padding:
+      32px
+      17px;
+  }
+
+  .whatsapp {
+    width: 100%;
+
+    padding:
+      13px
+      10px;
+
+    font-size: 10px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================
+     PORTADA
+================================== -->
+
+<header class="hero">
+
+  <div class="image-container">
+
+    <img
+      src="https://i.ibb.co/nH671vz/Untitled-design.png"
+      alt="Heaven's Doors"
+    >
+
+  </div>
+
+
+  <div class="hero-text">
+
+    <h1>
+      HEAVEN'S DOORS
+    </h1>
+
+    <p>
+      Alianzas entre clanes
+    </p>
+
+  </div>
+
+</header>
+
+
+
+<!-- ==================================
+     TÍTULO DE TÉRMINOS
+================================== -->
+
+<section class="section-title">
+
+  <div class="decoration">
+    ✦ ─── ⟡ ─── ✦
+  </div>
+
+  <h2>
+    TÉRMINOS Y CONDICIONES
+  </h2>
+
+  <p>
+    Presiona cada apartado para conocer los términos de la alianza.
+  </p>
+
+</section>
+
+
+
+<!-- ==================================
+     TÉRMINOS
+================================== -->
+
+<section class="terms">
+
+
+  <!-- 01 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          01
+        </span>
+
+        Respeto mutuo
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          Ambos clanes deberán mantener un trato respetuoso
+          entre sus miembros y administradores.
+        </p>
+
+        <p>
+          No se permitirán insultos, provocaciones, acoso,
+          discriminación o comportamientos que busquen
+          generar conflictos.
+        </p>
+
+        <p>
+          Cualquier desacuerdo deberá tratarse de manera
+          privada y con respeto.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 02 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          02
+        </span>
+
+        Respeto a la identidad de cada clan
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          Cada clan conserva su nombre, identidad,
+          administración, reglas y forma de trabajar.
+        </p>
+
+        <p>
+          Ningún clan podrá tomar decisiones en nombre
+          del otro sin autorización.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 03 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          03
+        </span>
+
+        Comunicación entre encargados
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          Cada clan deberá contar con una persona encargada
+          de la alianza para tratar dudas, problemas,
+          actividades o asuntos relacionados con la alianza.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 04 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          04
+        </span>
+
+        Privacidad
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          No se deberán compartir capturas, conversaciones
+          o información privada obtenida mediante la alianza
+          sin autorización.
+        </p>
+
+        <p>
+          Ambos clanes deberán cuidar la privacidad
+          de sus miembros.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 05 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          05
+        </span>
+
+        No reclutamiento
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          No se permitirá intentar sacar miembros del clan
+          aliado para integrarlos al propio clan.
+        </p>
+
+        <p>
+          Si una persona decide retirarse por voluntad propia,
+          su decisión será respetada.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 06 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          06
+        </span>
+
+        Conflictos entre miembros
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          Si surge un problema entre miembros de ambos clanes,
+          los encargados deberán hablarlo antes de que el
+          conflicto afecte a toda la alianza.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 07 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          07
+        </span>
+
+        Actividades y colaboraciones
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          Ambos clanes podrán realizar actividades, dinámicas,
+          juegos o colaboraciones en conjunto cuando ambas
+          partes estén de acuerdo.
+        </p>
+
+        <p>
+          La participación será voluntaria.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 08 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          08
+        </span>
+
+        Publicidad
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          No se permitirá utilizar la alianza únicamente
+          para promocionar constantemente un clan.
+        </p>
+
+        <p>
+          Las promociones o publicaciones conjuntas
+          deberán acordarse previamente.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 09 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          09
+        </span>
+
+        Uso de nombre y logo
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          El nombre, logo o diseños del clan aliado no deberán
+          utilizarse para publicaciones que puedan perjudicar
+          su imagen.
+        </p>
+
+        <p>
+          No se deberá dar a entender que existe un acuerdo
+          diferente al establecido.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 10 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          10
+        </span>
+
+        Respeto entre administraciones
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          Los administradores de un clan no podrán sancionar
+          ni tomar decisiones sobre los miembros del otro clan.
+        </p>
+
+        <p>
+          Cada administración se encargará de su propia comunidad.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 11 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          11
+        </span>
+
+        No conflictos entre clanes
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          Los problemas personales entre miembros no deberán
+          convertirse automáticamente en problemas entre los clanes.
+        </p>
+
+        <p>
+          Se buscará resolver cualquier situación mediante
+          comunicación entre administradores.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 12 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          12
+        </span>
+
+        Cumplimiento de acuerdos
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          Ambos clanes deberán respetar los acuerdos establecidos
+          al momento de formar la alianza.
+        </p>
+
+        <p>
+          Si algo cambia, deberá comunicarse al encargado
+          correspondiente.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 13 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          13
+        </span>
+
+        Inactividad
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          Si alguno de los dos clanes deja de mantener
+          comunicación durante un periodo prolongado,
+          cualquiera de las partes podrá preguntar si
+          la alianza continúa activa.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 14 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          14
+        </span>
+
+        Finalización de la alianza
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          Cualquiera de los dos clanes podrá terminar
+          la alianza.
+        </p>
+
+        <p>
+          De ser posible, deberá comunicar la decisión
+          al encargado del otro clan antes de finalizarla.
+        </p>
+
+        <p>
+          También podrá finalizarse cuando existan
+          incumplimientos graves de los términos.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- 15 -->
+
+  <article class="term">
+
+    <button class="term-button">
+
+      <span class="term-name">
+
+        <span class="number">
+          15
+        </span>
+
+        Aceptación
+
+      </span>
+
+      <i class="arrow">
+        ⌄
+      </i>
+
+    </button>
+
+
+    <div class="term-content">
+
+      <div class="term-text">
+
+        <p>
+          Al aceptar la alianza, ambos clanes confirman
+          que han leído, comprendido y aceptado estos
+          términos y condiciones.
+        </p>
+
+        <p>
+          Ambas partes se comprometen a respetarlos
+          mientras la alianza permanezca activa.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+</section>
+
+
+
+<!-- ==================================
+     ACEPTACIÓN
+================================== -->
+
+<section class="acceptance">
+
+  <div class="decoration">
+    ✦ ⟡ ✦
+  </div>
+
+
+  <h2>
+    ACEPTACIÓN DE LA ALIANZA
+  </h2>
+
+
+  <p class="acceptance-description">
+    Al marcar la casilla confirmas que tu clan ha leído,
+    comprendido y acepta los términos y condiciones
+    de Heaven's Doors.
+  </p>
+
+
+  <label class="accept-label">
+
+    <input
+      type="checkbox"
+      id="acceptTerms"
+    >
+
+    <span>
+      He leído y acepto la alianza y sus términos.
+    </span>
+
+  </label>
+
+
+  <a
+    id="whatsapp"
+    class="whatsapp"
+
+    href="https://wa.me/523781091978?text=Hola%20Alexa%2C%20nos%20gustar%C3%ADa%20formar%20una%20alianza%20con%20Heaven%27s%20Doors.%20Hemos%20le%C3%ADdo%20y%20aceptamos%20los%20t%C3%A9rminos%20y%20condiciones%20de%20la%20alianza."
+
+    target="_blank"
+
+    rel="noopener noreferrer"
+  >
+
+    ◈ &nbsp; ACEPTAR Y CONTACTAR POR WHATSAPP
+
+  </a>
+
+</section>
+
+
+
+<!-- ==================================
+     FOOTER
+================================== -->
+
+<footer>
+
+  ✦ HEAVEN'S DOORS ✦
+
+  <br><br>
+
+  Clanes unidos · Comunidades más fuertes
+
+</footer>
+
+
+
+<script>
+
+/* ==================================
+   ACORDEÓN
+================================== */
+
+const terms = document.querySelectorAll(".term");
+
+
+terms.forEach(term => {
+
+  const button =
+    term.querySelector(".term-button");
+
+  const content =
+    term.querySelector(".term-content");
+
+
+  button.addEventListener("click", () => {
+
+    const alreadyOpen =
+      term.classList.contains("active");
+
+
+    /* Cerrar todos */
+
+    terms.forEach(other => {
+
+      other.classList.remove("active");
+
+      other.querySelector(
+        ".term-content"
+      ).style.maxHeight = null;
+
+    });
+
+
+    /* Abrir el seleccionado */
+
+    if (!alreadyOpen) {
+
+      term.classList.add("active");
+
+      content.style.maxHeight =
+        content.scrollHeight + "px";
+
+    }
+
+  });
+
+});
+
+
+
+/* ==================================
+   ACEPTACIÓN
+================================== */
+
+const checkbox =
+  document.getElementById("acceptTerms");
+
+
+const whatsapp =
+  document.getElementById("whatsapp");
+
+
+checkbox.addEventListener("change", () => {
+
+  if (checkbox.checked) {
+
+    whatsapp.classList.add("ready");
+
+  } else {
+
+    whatsapp.classList.remove("ready");
+
+  }
+
+});
+
+</script>
+
+
+</body>
+</html>
